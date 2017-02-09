@@ -1,7 +1,6 @@
-print("hello world")
-
-def convertToList(sudoku):
-    print(sudoku)
-
-convertToList(3)
+with open("puzzle1.sudoku") as f:
+    rowstring = []
+    for line in f.read().split():
+        rowstring.append(line.split(','))
+    print rowstring
 
