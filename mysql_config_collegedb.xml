@@ -1,0 +1,7 @@
+<?xml version='1.0'?>
+<MySQL_INIT>
+   <mysql_host>localhost</mysql_host>
+   <mysql_database>backpackbuddies</mysql_database>
+   <mysql_username>wouter</mysql_username>
+   <mysql_password>H9dtnwGSb8yges</mysql_password>
+</MySQL_INIT>

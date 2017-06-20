@@ -1,0 +1,314 @@
+-- MySQL dump 10.13  Distrib 5.5.54, for debian-linux-gnu (x86_64)
+--
+-- Host: localhost    Database: backpackbuddies
+-- ------------------------------------------------------
+-- Server version	5.5.54-0+deb8u1
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `comments`
+--
+
+DROP TABLE IF EXISTS `comments`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `comments` (
+  `comment_id` int(16) unsigned NOT NULL AUTO_INCREMENT,
+  `post_id` int(16) unsigned NOT NULL,
+  `user_id` int(16) unsigned NOT NULL,
+  `comment` varchar(2048) COLLATE utf8_unicode_ci NOT NULL,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`comment_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `comments`
+--
+
+LOCK TABLES `comments` WRITE;
+/*!40000 ALTER TABLE `comments` DISABLE KEYS */;
+INSERT INTO `comments` VALUES (1,54,7,'This is a very interesting post.','2017-01-29 12:08:02'),(2,54,7,'This is a very interesting post.','2017-01-29 12:08:16'),(3,54,7,'This is a very interesting post.','2017-01-29 12:10:47'),(4,56,7,'Hoi','2017-01-29 13:41:03'),(5,59,7,'Ramaoelala','2017-01-29 14:41:47'),(6,56,6,'Rotterdam is cool','2017-01-29 15:40:38'),(7,65,1,'cool','2017-01-29 16:58:31'),(8,65,7,'I know right!','2017-01-29 18:55:02'),(9,65,7,'I know right!','2017-01-29 18:55:12'),(10,82,28,'Cool','2017-01-30 12:30:59'),(11,82,6,'Thanks!','2017-01-31 08:32:20'),(12,82,6,'Reply','2017-01-31 08:32:38'),(13,83,6,'Comment','2017-01-31 08:33:25'),(14,83,6,'Comment','2017-01-31 08:33:28'),(15,65,6,'YO','2017-01-31 08:53:22'),(16,84,6,'You are right. This is so awesome! Good job!','2017-01-31 13:00:19'),(17,59,21,'hoi','2017-02-01 14:01:43'),(18,59,7,'Dadada','2017-02-01 14:15:56'),(19,59,7,'DAdada','2017-02-01 14:15:58'),(20,59,7,'Dada','2017-02-01 14:16:01'),(21,59,7,'Dada','2017-02-01 14:16:04'),(22,59,7,'Dada','2017-02-01 14:17:19'),(23,59,7,'Dada','2017-02-01 14:18:40'),(24,59,7,'Dada','2017-02-01 14:20:20'),(25,59,7,'Dada','2017-02-01 14:21:11'),(26,59,7,'Dada','2017-02-01 14:21:57'),(27,89,6,'muhahaha','2017-02-01 19:34:02'),(28,89,6,'dit werkt heel fijn.\r\n\r\njajaja muhaha','2017-02-01 19:34:25'),(29,132,21,'Wat een leuke stad!','2017-02-03 09:07:49'),(30,132,21,'Mooie spar hier! :)','2017-02-03 09:18:19'),(31,134,21,'Hi! Yes let\'s go!','2017-02-03 09:36:47'),(32,121,45,'hoi','2017-02-03 09:59:47'),(33,140,46,'hoi','2017-02-03 10:13:16'),(34,59,47,'GoGo','2017-02-03 10:45:20'),(35,145,21,'dfghj','2017-02-03 11:09:53'),(36,82,28,'HOI!','2017-02-03 11:13:01'),(37,148,6,'I miss you too!','2017-02-03 11:58:23'),(38,148,21,'test comment','2017-02-03 11:58:45'),(39,148,21,'nog een comment','2017-02-03 11:58:55'),(40,147,21,'1','2017-02-03 11:58:59'),(41,147,21,'1','2017-02-03 11:59:04'),(42,112,6,'Yes!','2017-02-03 13:10:49');
+/*!40000 ALTER TABLE `comments` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `followers`
+--
+
+DROP TABLE IF EXISTS `followers`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `followers` (
+  `follower_id` int(16) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(16) unsigned NOT NULL,
+  `location_id` int(16) unsigned NOT NULL,
+  PRIMARY KEY (`follower_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=128 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `followers`
+--
+
+LOCK TABLES `followers` WRITE;
+/*!40000 ALTER TABLE `followers` DISABLE KEYS */;
+INSERT INTO `followers` VALUES (1,13,10),(2,13,12),(3,7,11),(4,13,13),(7,7,12),(8,7,9),(14,5,10),(20,13,14),(72,13,11),(76,13,9),(77,13,15),(78,13,19),(79,13,16),(80,28,14),(86,30,25),(87,31,13),(89,31,16),(90,31,15),(91,31,11),(92,6,9),(94,6,13),(95,28,9),(97,13,27),(98,13,25),(101,7,27),(102,21,27),(104,1,27),(105,39,27),(107,21,13),(108,21,25),(109,21,9),(110,21,15),(111,42,44),(112,21,45),(113,42,45),(114,43,25),(115,21,14),(116,44,46),(117,45,9),(118,1,9),(119,46,40),(120,39,35),(121,47,46),(122,21,46),(123,6,14),(124,6,35),(125,6,25),(126,6,10),(127,6,19);
+/*!40000 ALTER TABLE `followers` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `friends`
+--
+
+DROP TABLE IF EXISTS `friends`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `friends` (
+  `friendship_id` int(16) unsigned NOT NULL AUTO_INCREMENT,
+  `user_one_id` int(16) unsigned NOT NULL,
+  `user_two_id` int(16) unsigned NOT NULL,
+  `status` tinyint(4) NOT NULL,
+  PRIMARY KEY (`friendship_id`),
+  UNIQUE KEY `user_one_id` (`user_one_id`,`user_two_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `friends`
+--
+
+LOCK TABLES `friends` WRITE;
+/*!40000 ALTER TABLE `friends` DISABLE KEYS */;
+INSERT INTO `friends` VALUES (3,7,1,1),(6,13,1,1),(8,1,29,1),(13,31,7,1),(14,31,1,1),(18,13,7,1),(24,6,7,1),(29,38,29,0),(30,38,1,1),(31,6,15,0),(32,6,31,1),(33,21,6,1),(36,6,36,0),(37,1,28,1),(38,1,6,1),(39,7,36,0),(40,21,29,0),(41,41,1,1),(45,45,41,0),(46,46,1,1),(47,46,7,1),(48,46,21,1),(50,47,6,1),(51,47,1,1),(52,7,28,1),(53,28,6,1),(54,28,36,0),(56,28,21,1);
+/*!40000 ALTER TABLE `friends` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `groups`
+--
+
+DROP TABLE IF EXISTS `groups`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `groups` (
+  `group_id` int(16) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
+  `location_id` int(16) unsigned NOT NULL,
+  `description` varchar(2048) COLLATE utf8_unicode_ci NOT NULL,
+  `accommodation` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
+  `traveltype` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
+  `owner_id` int(16) unsigned NOT NULL,
+  `datetime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`group_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `groups`
+--
+
+LOCK TABLES `groups` WRITE;
+/*!40000 ALTER TABLE `groups` DISABLE KEYS */;
+INSERT INTO `groups` VALUES (10,'Backpack Buddies',27,'The developer team','hotel','backpacking',1,'2017-01-24 12:49:29'),(13,'Tralalol',14,'Tralalalalalalalallalalallalalalalalalallalalalalalallalalalalalallaallalolololololololololotralalalalol','hotel','backpacking',1,'2017-01-25 10:49:16'),(14,'Supercalifragilisticexpialidasties',14,'supercalifragilisticexpialidasties supercalifragilisticexpialidasties supercalifragilisticexpialidasties supercalifragilisticexpialidasties supercalifragilisticexpialidasties','hotel','backpacking',1,'2017-01-25 11:00:49'),(16,'Backpack Buddies',9,'Us.','guesthouse','other',1,'2017-01-25 12:44:42'),(17,'Buddies travelling to New York!',27,'If you want to travel with me and my friend to New York, feel free to join us.','hotel','backpacking',1,'2017-01-26 13:04:07'),(18,'Tour de Paris',27,'Paris, la cité de la tour.','hotel','backpacking',13,'2017-01-26 15:16:49'),(19,'Hi',14,'Hi','hotel','backpacking',1,'2017-01-26 17:22:16'),(20,'De techno groep',14,'Leip dansen in Berlijn','other','backpacking',1,'2017-01-27 10:44:22'),(21,'aa',14,'aa','hotel','backpacking',1,'2017-01-27 14:24:21'),(22,'Argentinie rocks!',25,'The Iguazu falls in Argentinia are beautiful!','other','backpacking',1,'2017-01-28 14:51:54'),(23,'Who wants to travel with me',14,'Berlin wall','tent','camping',1,'2017-01-29 11:30:27'),(24,'A',15,'Porto','hostel','camping',1,'2017-01-30 12:32:51'),(25,'Jingle Bells',16,'Jingle Bells Jingle Bells Jingle all the way','resort','cruise',36,'2017-01-30 16:14:18'),(26,'hi',25,'hi','hotel','backpacking',6,'2017-01-31 15:14:45'),(27,'Awesome group',27,'This group is great.','hotel','backpacking',1,'2017-01-31 17:23:39'),(28,'Group',27,'A group','hotel','backpacking',1,'2017-01-31 20:04:18'),(29,'The best group',9,'This is the best group there is.','other','other',1,'2017-01-31 20:21:38'),(30,'Falafel',22,'Falafelfans','bedandbreakfast','roadtrip',7,'2017-02-01 13:56:01'),(31,'Wouter',27,'Amsterdam','hotel','backpacking',6,'2017-02-02 13:34:47'),(32,'Wouter2',27,'AMS SCHIPHOL','hotel','backpacking',6,'2017-02-02 13:35:02'),(33,'De coole testers',27,'De beste testers','motel','roadtrip',39,'2017-02-02 20:12:46');
+/*!40000 ALTER TABLE `groups` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `locations`
+--
+
+DROP TABLE IF EXISTS `locations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `locations` (
+  `location_id` int(16) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
+  `country` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
+  `owner_id` int(16) unsigned NOT NULL,
+  `datetime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`location_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `locations`
+--
+
+LOCK TABLES `locations` WRITE;
+/*!40000 ALTER TABLE `locations` DISABLE KEYS */;
+INSERT INTO `locations` VALUES (9,'Science Park','Netherlands',45,'0000-00-00 00:00:00'),(10,'Paris','France',1,'0000-00-00 00:00:00'),(11,'Rotterdam','Netherlands',1,'0000-00-00 00:00:00'),(12,'Rome','Italy',1,'0000-00-00 00:00:00'),(13,'New York','United States of America',1,'2017-01-25 13:43:18'),(14,'Berlin','Germany',1,'2017-01-26 09:22:32'),(15,'Porto','Portugal',1,'2017-01-26 13:07:08'),(16,'Washington','United States of America',1,'2017-01-26 14:50:31'),(19,'Los Angeles','United States of America',1,'2017-01-27 11:14:59'),(20,'Sydney','Australia',1,'2017-01-27 11:26:08'),(21,'Vienna','Austria',1,'2017-01-27 11:31:12'),(22,'Tokyo','Japan',1,'2017-01-27 11:34:03'),(25,'Iguazu falls','Argentina',1,'2017-01-28 14:51:05'),(27,'Amsterdam','Netherlands',1,'2017-01-30 12:34:08'),(29,'Test locatie','Burkina Faso',1,'2017-01-31 15:15:08'),(30,'Location','Afganistan',1,'2017-01-31 20:17:52'),(31,'Pyjama\'s','Bahamas',7,'2017-02-01 20:04:38'),(34,'Salvador','Brazil',7,'2017-02-01 20:14:39'),(35,'Delete test','Afganistan',1,'2017-02-01 20:45:55'),(37,'test','Afganistan',31,'2017-02-02 13:01:46'),(38,'Andorra','American Samoa',6,'2017-02-02 13:34:28'),(39,'bhi','Afganistan',6,'2017-02-03 08:51:47'),(40,'Brussel','Belgium',1,'2017-02-03 08:54:07'),(42,'pyramid','Egypt',1,'2017-02-03 08:56:16'),(43,'asasdf','Albania',21,'2017-02-03 09:13:23'),(44,'Science park in afghanistan','Afganistan',39,'2017-02-03 09:13:38'),(45,'Tha mooon!','Greenland',42,'2017-02-03 09:28:27'),(46,'Alleppo','Syria',39,'2017-02-03 09:28:41'),(47,'Dodo','Afganistan',7,'2017-02-03 09:32:49'),(48,'Berlin','Afganistan',43,'2017-02-03 09:46:43'),(49,'heeeuuy','Afganistan',44,'2017-02-03 09:57:21'),(50,'jan','Afganistan',39,'2017-02-03 10:21:09'),(51,'TRUMP PROTEST','Afganistan',21,'2017-02-03 11:07:46');
+/*!40000 ALTER TABLE `locations` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `members`
+--
+
+DROP TABLE IF EXISTS `members`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `members` (
+  `member_id` int(16) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(16) unsigned NOT NULL,
+  `group_id` int(16) unsigned NOT NULL,
+  PRIMARY KEY (`member_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `members`
+--
+
+LOCK TABLES `members` WRITE;
+/*!40000 ALTER TABLE `members` DISABLE KEYS */;
+INSERT INTO `members` VALUES (2,1,13),(6,7,16),(7,7,10),(8,7,21),(10,7,14),(18,21,19),(19,13,10),(22,7,19),(23,36,14),(24,6,10),(25,6,13),(26,6,17),(27,6,20),(29,21,18),(30,6,19),(31,6,18),(32,7,18),(34,7,29),(35,21,14),(36,21,10),(37,21,22);
+/*!40000 ALTER TABLE `members` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `messages`
+--
+
+DROP TABLE IF EXISTS `messages`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `messages` (
+  `message_id` int(16) unsigned NOT NULL AUTO_INCREMENT,
+  `sender_id` int(16) unsigned NOT NULL,
+  `receiver_id` int(16) unsigned NOT NULL,
+  `subject` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
+  `message` varchar(8192) COLLATE utf8_unicode_ci NOT NULL,
+  `datetime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `status_sender` tinyint(4) NOT NULL DEFAULT '0',
+  `status_receiver` tinyint(4) NOT NULL DEFAULT '0',
+  `status_seen` tinyint(4) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`message_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=152 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `messages`
+--
+
+LOCK TABLES `messages` WRITE;
+/*!40000 ALTER TABLE `messages` DISABLE KEYS */;
+INSERT INTO `messages` VALUES (21,13,10,'Subject3','Message3','2017-01-24 13:26:25',1,0,0),(22,0,10,'Test','This is a test.','2017-01-24 14:04:32',0,0,0),(23,1,10,'Test','Test','2017-01-24 14:04:39',0,0,0),(24,6,5,'Hallo Falk','Hallo Falk','2017-01-24 14:56:51',1,0,0),(25,6,6,'A mail to Martine.','No content','2017-01-24 15:00:35',1,0,1),(26,10,10,'testing','lalalalalallalalala','2017-01-24 15:03:26',0,0,0),(27,7,6,'hoi','Ik wilde dit ook even proberen, haha :)','2017-01-24 15:37:53',0,0,1),(28,10,10,'Testing','Werkt dit?','2017-01-24 18:54:55',0,0,0),(29,6,6,'Kaas','Kaas','2017-01-24 19:39:53',0,1,0),(30,6,6,'You\'ve got mail!','You\'ve got mail!','2017-01-24 20:04:42',0,0,1),(31,6,7,'Een testbericht.','Hallo','2017-01-25 11:19:11',0,0,1),(32,6,6,'martine','mail','2017-01-25 11:36:41',0,0,1),(33,20,6,'test','....','2017-01-25 11:45:01',0,1,0),(34,13,10,'aa','aa','2017-01-25 11:45:14',1,0,0),(35,6,6,'Email','Email','2017-01-25 12:32:34',0,1,0),(36,6,1,'Een nieuwe mail!','Een nieuwe mail!','2017-01-25 12:53:42',0,1,1),(37,1,6,'Hoi','Mail','2017-01-25 13:43:26',1,1,0),(38,6,1,'Hoi','Hoi','2017-01-25 13:43:48',0,1,0),(39,6,1,'Hoi','Hoi','2017-01-25 13:44:15',0,1,1),(40,1,6,'JAJA','OKE','2017-01-25 13:44:40',1,1,0),(41,1,6,'spam','spam','2017-01-25 13:51:05',1,1,0),(42,1,6,'spam','spam','2017-01-25 13:51:08',1,1,0),(43,1,6,'spam','spam','2017-01-25 13:51:10',1,1,0),(44,1,6,'spam','spam','2017-01-25 13:51:13',1,1,0),(45,1,6,'spam','spam','2017-01-25 13:51:15',1,1,0),(46,6,1,'RE: spam','Antwoord op je spam','2017-01-26 08:54:11',1,1,1),(47,6,6,'Visibility test','Visibility test','0000-00-00 00:00:00',1,0,1),(48,6,6,'New test v','New test v','0000-00-00 00:00:00',1,0,1),(49,6,6,'MAIL','MAIL','2017-01-26 09:12:54',1,1,0),(50,6,6,'mail','mail','2017-01-26 09:14:58',1,1,0),(51,1,6,'RE: RE: spam','RE RE SPAM','2017-01-26 12:23:34',1,1,0),(52,6,1,'RE: RE: RE: spam','Spam','2017-01-26 17:21:51',1,1,1),(53,6,6,'Mail','mail','2017-01-28 12:56:56',1,1,0),(54,6,6,'Subject','Subject','2017-01-28 12:59:17',1,1,0),(55,31,6,'Delete function','Delecte function','2017-01-28 14:02:34',0,1,0),(56,31,6,'Delete function 2','Delecte function 2','2017-01-28 14:02:53',0,1,0),(57,31,31,'mail','mial','2017-01-28 18:45:33',0,0,1),(58,6,31,'test','test','2017-01-29 15:38:26',1,1,0),(59,28,1,'Hoi','hoi','2017-01-30 12:35:34',0,1,1),(60,28,28,'RE: Hoi','hoi','2017-01-30 12:35:51',0,0,1),(61,1,28,'RE: Hoi','Hallo pieter!','2017-01-30 14:50:00',0,0,1),(62,6,6,'newmartine','Hallo','2017-01-31 07:32:16',0,0,1),(63,6,31,'Hallo','Hallo','2017-01-31 07:32:53',1,1,1),(64,6,31,'Hallo','Hallo','2017-01-31 07:44:17',1,1,1),(65,6,31,'hallo','hallo','2017-01-31 07:44:37',1,1,1),(66,6,31,'L','L','2017-01-31 07:54:35',0,1,1),(67,6,6,'H','H','2017-01-31 07:55:09',0,0,1),(68,31,6,'JIJIJIJI','j','2017-01-31 08:46:42',0,0,1),(69,6,31,'A1','A1','2017-01-31 10:52:05',0,1,1),(70,6,31,'A2','A2','2017-01-31 10:52:17',0,1,1),(71,6,31,'A3','A3','2017-01-31 10:52:28',0,1,1),(72,31,6,'B1','B1','2017-01-31 10:53:44',0,0,1),(73,31,6,'B2','B2','2017-01-31 10:53:48',0,0,1),(74,31,6,'B3','B3','2017-01-31 10:53:56',0,0,1),(75,31,6,'New mail','new mail','2017-01-31 13:36:44',0,0,1),(76,31,31,'Newmail','newmail','2017-01-31 13:36:57',0,1,1),(77,6,1,'Ongelezen mail','Hoi, is deze mail groen en wordt ie zwart als je m aanklikt?','2017-01-31 13:58:19',0,1,1),(78,6,7,'Ongelezen mail','Hoi, is deze mail groen en wordt ie zwart als je hem aanklikt?','2017-01-31 13:58:36',0,0,1),(79,6,6,'mail','mial','2017-01-31 13:58:51',0,0,1),(80,1,6,'RE: Ongelezen mail','helaas niet','2017-01-31 17:21:40',1,0,1),(81,6,6,'mail','mail','2017-02-01 09:43:03',0,0,1),(82,7,6,'RE: Ongelezen mail','Ik denk van wel','2017-02-01 10:13:58',0,0,1),(83,6,7,'RE: RE: Ongelezen mail','HAHAAHAAH','2017-02-01 10:14:13',0,0,1),(84,6,1,'NEw mailtje','N','2017-02-01 10:30:19',0,1,1),(85,6,1,'HALLO','HALLo','2017-02-01 11:24:56',0,0,1),(86,1,6,'RE: HALLO','Hoi','2017-02-01 11:44:17',0,1,1),(87,7,28,'hoi!','hi!','2017-02-01 11:48:26',0,0,1),(88,29,29,'friend?','Ik ben jouw vriend nu?','2017-02-01 12:08:16',1,1,1),(89,29,1,'hallo','tihihi','2017-02-01 12:09:42',0,1,1),(90,1,29,'RE: hallo','Hallo vriend','2017-02-01 12:10:36',0,0,1),(91,29,1,'RE: RE: hallo','RERERERERE','2017-02-01 12:11:15',0,1,1),(92,1,29,'RE: RE: RE: hallo','REREEREEREEREEREEREERERERERERE','2017-02-01 13:30:53',1,0,0),(93,1,38,'WELKOM','MOOIE WEBSITE HE?','2017-02-01 13:46:34',0,0,1),(94,38,1,'Beste Wouter,','Ik vind je website wel okee. Alleen jammer dat je \'terms of use\' vol spelfouten zit.\r\nDries','2017-02-01 13:47:32',0,1,1),(95,38,1,'RE: WELKOM','Ja, ja een geweldige website! Met enige verbeteringen zelfs mijn stem waard.','2017-02-01 13:49:20',0,1,1),(96,1,38,'RE: RE: WELKOM','Dankjewel Dries, wij zullen er hard aan werken om jou tips te verwerken!','2017-02-01 13:50:20',1,0,1),(97,6,31,'HI','HI','2017-02-01 14:00:16',0,1,1),(98,21,6,'asdf','asdfasdfasdf','2017-02-01 14:02:01',0,0,1),(99,1,1,'test','test','2017-02-01 14:46:00',0,0,1),(100,1,1,'test','test','2017-02-01 14:46:02',0,0,1),(101,7,1,'Haha','Hahaha','2017-02-01 14:46:03',0,0,1),(102,1,1,'test','test','2017-02-01 14:46:05',0,0,1),(103,7,1,'Haha','Blablabla','2017-02-01 14:46:16',0,0,1),(104,6,6,'h','h','2017-02-01 18:55:29',0,0,1),(105,6,6,'Hi','HIEIIE','2017-02-01 19:23:26',1,1,1),(106,1,1,'WARNING: YOU DID NOT FOLLOW OUR GUIDELINES.','You did not follow certain rules within the BackpackBuddies community. The next infraction of our rules that is committed under your account will result in a ban by revoking your account. If you are not aware of why you are getting this warning, we suggest you take a look at the <a href=\'guidelines.php\'>Guidelines</a> and <a href=\'terms.php\'>Terms of Use</a>. Thank you for your cooperation,\n		The Team behind BackpackBuddies','2017-02-01 21:39:33',1,0,1),(107,1,1,'WARNING: YOU DID NOT FOLLOW OUR GUIDELINES.','You did not follow certain rules within the BackpackBuddies community. The next infraction of our rules that is committed under your account will result in a ban by revoking your account. If you are not aware of why you are getting this warning, we suggest you take a look at the <a href=\'guidelines.php\'>Guidelines</a> and <a href=\'terms.php\'>Terms of Use</a>. Thank you for your cooperation,\n		The Team behind BackpackBuddies','2017-02-01 22:00:10',1,0,1),(108,1,6,'WARNING: YOU DID NOT FOLLOW OUR GUIDELINES.','You did not follow certain rules within the BackpackBuddies community. The next infraction of our rules that is committed under your account will result in a ban by revoking your account. If you are not aware of why you are getting this warning, we suggest you take a look at the <a href=\'guidelines.php\'>Guidelines</a> and <a href=\'terms.php\'>Terms of Use</a>. Thank you for your cooperation,\n		The Team behind BackpackBuddies','2017-02-01 22:38:39',1,0,1),(109,1,7,'WARNING: YOU DID NOT FOLLOW OUR GUIDELINES.','You did not follow certain rules within the BackpackBuddies community. The next infraction of our rules that is committed under your account will result in a ban by revoking your account. If you are not aware of why you are getting this warning, we suggest you take a look at the <a href=\'guidelines.php\'>Guidelines</a> and <a href=\'terms.php\'>Terms of Use</a>. Thank you for your cooperation,\n		The Team behind BackpackBuddies','2017-02-02 12:12:47',1,0,1),(110,1,6,'Lange mailtjes','Lange mailtjes lijken de layout te verpesten... Ik test het even met dit mooie mailtje.\r\nLange mailtjes lijken de layout te verpesten... Ik test het even met dit mooie mailtje.\r\nLange mailtjes lijken de layout te verpesten... Ik test het even met dit mooie mailtje.\r\nLange mailtjes lijken de layout te verpesten... Ik test het even met dit mooie mailtje.\r\nLange mailtjes lijken de layout te verpesten... Ik test het even met dit mooie mailtje.\r\nLange mailtjes lijken de layout te verpesten... Ik test het even met dit mooie mailtje.','2017-02-02 20:03:45',0,0,1),(111,6,7,'Hi! Would you like to travel with me?','Hi, you are very nice.','2017-02-03 09:03:04',0,0,0),(112,6,7,'Hi! Would you like to travel with me?','Hi','2017-02-03 09:03:12',0,0,0),(115,1,21,'HALLO FALK','Hoe gaat het met jou?','2017-02-03 09:09:47',0,0,1),(116,1,21,'Hoi falk','Mooie site he?','2017-02-03 09:12:34',0,0,1),(117,39,21,'Hoi','Ik ben jan.','2017-02-03 09:12:58',0,0,1),(118,21,7,'Ontvrienden','Hey, ik heb je ontvriend!','2017-02-03 09:14:44',0,0,1),(119,39,41,'Hallo','Weet je zeker dat je niet alex heet?','2017-02-03 09:21:57',0,0,0),(120,39,41,'Hoi alex','Hoe is het met jou','2017-02-03 09:23:43',0,0,1),(121,41,39,'RE: Hoi alex','REEREREERERE','2017-02-03 09:24:04',0,0,1),(122,42,7,'HOI','HOI','2017-02-03 09:31:32',0,0,1),(123,7,42,'RE: HOI','Hoe gaat  het??','2017-02-03 09:32:02',0,0,1),(124,7,42,'RE: HOI','Nog een keer','2017-02-03 09:32:20',0,0,0),(125,43,21,'yo','yoyoyo','2017-02-03 09:48:07',0,0,1),(126,21,43,'RE: yo','Yo waddup doag','2017-02-03 09:48:21',0,0,1),(127,45,41,'Hey eikel','Je bent lelijk','2017-02-03 09:57:50',0,0,0),(128,38,1,'RE: RE: RE: WELKOM','Wouter,\r\nDat is geweldig om te horen. Ik kijk er naar uit om de website volledig werkend te zien, want nouja, dat is gewoon fijn.\r\nDries','2017-02-03 10:01:48',0,0,1),(129,1,45,'WARNING: YOU DID NOT FOLLOW OUR GUIDELINES.','You did not follow certain rules within the BackpackBuddies community. The next infraction of our rules that is committed under your account will result in a ban by revoking your account. If you are not aware of why you are getting this warning, we suggest you take a look at the <a href=\'guidelines.php\'>Guidelines</a> and <a href=\'terms.php\'>Terms of Use</a>. Thank you for your cooperation,\n		The Team behind BackpackBuddies','2017-02-03 10:02:45',0,0,0),(130,1,38,'WARNING: YOU DID NOT FOLLOW OUR GUIDELINES.','You did not follow certain rules within the BackpackBuddies community. The next infraction of our rules that is committed under your account will result in a ban by revoking your account. If you are not aware of why you are getting this warning, we suggest you take a look at the <a href=\'guidelines.php\'>Guidelines</a> and <a href=\'terms.php\'>Terms of Use</a>. Thank you for your cooperation,\n		The Team behind BackpackBuddies','2017-02-03 10:05:46',0,0,0),(131,1,1,'WARNING: YOU DID NOT FOLLOW OUR GUIDELINES.','You did not follow certain rules within the BackpackBuddies community. The next infraction of our rules that is committed under your account will result in a ban by revoking your account. If you are not aware of why you are getting this warning, we suggest you take a look at the <a href=\'guidelines.php\'>Guidelines</a> and <a href=\'terms.php\'>Terms of Use</a>. Thank you for your cooperation,\n		The Team behind BackpackBuddies','2017-02-03 10:05:52',0,1,0),(132,1,1,'WARNING: YOU DID NOT FOLLOW OUR GUIDELINES.','You did not follow certain rules within the BackpackBuddies community. The next infraction of our rules that is committed under your account will result in a ban by revoking your account. If you are not aware of why you are getting this warning, we suggest you take a look at the <a href=\'guidelines.php\'>Guidelines</a> and <a href=\'terms.php\'>Terms of Use</a>. Thank you for your cooperation,\n		The Team behind BackpackBuddies','2017-02-03 10:05:53',0,1,0),(133,1,1,'WARNING: YOU DID NOT FOLLOW OUR GUIDELINES.','You did not follow certain rules within the BackpackBuddies community. The next infraction of our rules that is committed under your account will result in a ban by revoking your account. If you are not aware of why you are getting this warning, we suggest you take a look at the <a href=\'guidelines.php\'>Guidelines</a> and <a href=\'terms.php\'>Terms of Use</a>. Thank you for your cooperation,\n		The Team behind BackpackBuddies','2017-02-03 10:05:54',0,1,1),(134,1,1,'WARNING: YOU DID NOT FOLLOW OUR GUIDELINES.','You did not follow certain rules within the BackpackBuddies community. The next infraction of our rules that is committed under your account will result in a ban by revoking your account. If you are not aware of why you are getting this warning, we suggest you take a look at the <a href=\'guidelines.php\'>Guidelines</a> and <a href=\'terms.php\'>Terms of Use</a>. Thank you for your cooperation,\n		The Team behind BackpackBuddies','2017-02-03 10:05:54',0,1,0),(135,1,1,'WARNING: YOU DID NOT FOLLOW OUR GUIDELINES.','You did not follow certain rules within the BackpackBuddies community. The next infraction of our rules that is committed under your account will result in a ban by revoking your account. If you are not aware of why you are getting this warning, we suggest you take a look at the <a href=\'guidelines.php\'>Guidelines</a> and <a href=\'terms.php\'>Terms of Use</a>. Thank you for your cooperation,\n		The Team behind BackpackBuddies','2017-02-03 10:05:55',0,1,0),(136,1,1,'WARNING: YOU DID NOT FOLLOW OUR GUIDELINES.','You did not follow certain rules within the BackpackBuddies community. The next infraction of our rules that is committed under your account will result in a ban by revoking your account. If you are not aware of why you are getting this warning, we suggest you take a look at the <a href=\'guidelines.php\'>Guidelines</a> and <a href=\'terms.php\'>Terms of Use</a>. Thank you for your cooperation,\n		The Team behind BackpackBuddies','2017-02-03 10:05:55',0,1,0),(137,1,1,'WARNING: YOU DID NOT FOLLOW OUR GUIDELINES.','You did not follow certain rules within the BackpackBuddies community. The next infraction of our rules that is committed under your account will result in a ban by revoking your account. If you are not aware of why you are getting this warning, we suggest you take a look at the <a href=\'guidelines.php\'>Guidelines</a> and <a href=\'terms.php\'>Terms of Use</a>. Thank you for your cooperation,\n		The Team behind BackpackBuddies','2017-02-03 10:05:55',0,1,0),(138,1,1,'WARNING: YOU DID NOT FOLLOW OUR GUIDELINES.','You did not follow certain rules within the BackpackBuddies community. The next infraction of our rules that is committed under your account will result in a ban by revoking your account. If you are not aware of why you are getting this warning, we suggest you take a look at the <a href=\'guidelines.php\'>Guidelines</a> and <a href=\'terms.php\'>Terms of Use</a>. Thank you for your cooperation,\n		The Team behind BackpackBuddies','2017-02-03 10:05:56',0,1,0),(139,1,1,'WARNING: YOU DID NOT FOLLOW OUR GUIDELINES.','You did not follow certain rules within the BackpackBuddies community. The next infraction of our rules that is committed under your account will result in a ban by revoking your account. If you are not aware of why you are getting this warning, we suggest you take a look at the <a href=\'guidelines.php\'>Guidelines</a> and <a href=\'terms.php\'>Terms of Use</a>. Thank you for your cooperation,\n		The Team behind BackpackBuddies','2017-02-03 10:05:56',0,1,0),(140,1,1,'WARNING: YOU DID NOT FOLLOW OUR GUIDELINES.','You did not follow certain rules within the BackpackBuddies community. The next infraction of our rules that is committed under your account will result in a ban by revoking your account. If you are not aware of why you are getting this warning, we suggest you take a look at the <a href=\'guidelines.php\'>Guidelines</a> and <a href=\'terms.php\'>Terms of Use</a>. Thank you for your cooperation,\n		The Team behind BackpackBuddies','2017-02-03 10:05:56',0,1,0),(141,46,21,'Hoi','Hi','2017-02-03 10:15:37',0,0,1),(142,7,21,'Hoi','Hoi','2017-02-03 10:27:06',0,0,1),(143,1,21,'WARNING: YOU DID NOT FOLLOW OUR GUIDELINES.','You did not follow certain rules within the BackpackBuddies community. The next infraction of our rules that is committed under your account will result in a ban by revoking your account. If you are not aware of why you are getting this warning, we suggest you take a look at the <a href=\'guidelines.php\'>Guidelines</a> and <a href=\'terms.php\'>Terms of Use</a>. Thank you for your cooperation,\n		The Team behind BackpackBuddies','2017-02-03 10:43:29',0,0,1),(144,21,1,'d','Social road is kut','2017-02-03 10:51:22',0,0,1),(145,21,1,'RE: Hoi falk','ja zeker','2017-02-03 11:08:41',0,0,1),(146,28,6,'Hoi','Wil je vrienden worden?','2017-02-03 11:14:01',0,0,1),(147,6,28,'RE: Hoi','JA! Wil je reizen naar Tokyo?','2017-02-03 11:14:17',0,0,1),(148,28,6,'RE: RE: Hoi','Wel naar japan, robocup in july. Komen jullie ook?','2017-02-03 11:15:14',0,0,1),(149,1,28,'WARNING: YOU DID NOT FOLLOW OUR GUIDELINES.','You did not follow certain rules within the BackpackBuddies community. The next infraction of our rules that is committed under your account will result in a ban by revoking your account. If you are not aware of why you are getting this warning, we suggest you take a look at the <a href=\'guidelines.php\'>Guidelines</a> and <a href=\'terms.php\'>Terms of Use</a>. Thank you for your cooperation,\n		The Team behind BackpackBuddies','2017-02-03 11:20:21',0,0,1),(150,28,36,'Hoi','Wie ben je?','2017-02-03 11:23:01',0,0,0),(151,6,6,'HI!!','hi','2017-02-03 13:11:25',0,0,0);
+/*!40000 ALTER TABLE `messages` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `posts`
+--
+
+DROP TABLE IF EXISTS `posts`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `posts` (
+  `post_id` int(16) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(16) unsigned NOT NULL,
+  `type` tinyint(4) NOT NULL COMMENT 'Group/Location/etc',
+  `type_id` int(16) unsigned NOT NULL COMMENT 'Group/location ID',
+  `subject` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
+  `post` varchar(2048) COLLATE utf8_unicode_ci NOT NULL,
+  `datetime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`post_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=149 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `posts`
+--
+
+LOCK TABLES `posts` WRITE;
+/*!40000 ALTER TABLE `posts` DISABLE KEYS */;
+INSERT INTO `posts` VALUES (1,7,0,14,'Hoi','Hoi','2017-01-28 10:19:19'),(2,7,0,14,'Hoi','Hoi','2017-01-28 10:20:53'),(3,7,0,14,'','','2017-01-28 10:21:16'),(4,7,0,14,'','','2017-01-28 10:24:43'),(5,7,0,0,'Test','Dit is een test post','2017-01-28 11:19:29'),(6,7,0,0,'Test','Dit is een test post','2017-01-28 11:21:13'),(7,7,0,11,'test 2','dit is test 2','2017-01-28 11:23:56'),(8,7,0,11,'test 2','dit is test 2','2017-01-28 11:24:12'),(9,7,0,11,'dadablabla','blabblalba','2017-01-28 11:32:01'),(10,7,0,11,'dadablabla','blabblalba','2017-01-28 11:32:14'),(11,7,0,11,'dadablabla','blabblalba','2017-01-28 11:32:25'),(12,7,0,11,'dadablabla','blabblalba','2017-01-28 11:36:04'),(13,7,0,11,'dada','dada','2017-01-28 11:36:27'),(14,7,0,11,'dada','dada','2017-01-28 11:36:35'),(15,7,0,11,'dada','dadadara','2017-01-28 11:44:04'),(16,7,0,11,'dada','dadadara','2017-01-28 11:44:22'),(17,7,0,11,'dada','dadadara','2017-01-28 11:54:13'),(18,7,0,11,'testtest','teststeset','2017-01-28 11:55:12'),(19,7,0,11,'testtest','teststeset','2017-01-28 11:56:42'),(20,7,0,11,'testtest','teststeset','2017-01-28 12:00:32'),(22,13,0,12,'Rome','Test','2017-01-28 13:11:56'),(26,7,1,14,'Test group','grouppost','2017-01-28 13:45:57'),(27,7,1,14,'Test group','grouppost','2017-01-28 13:47:25'),(28,13,0,12,'Test','Test1','2017-01-28 13:50:08'),(29,13,0,12,'Test','Test1','2017-01-28 13:50:57'),(30,13,0,12,'Test','Test1','2017-01-28 13:51:43'),(31,13,0,12,'Test','Test1','2017-01-28 13:52:36'),(32,13,0,12,'Test','Test1','2017-01-28 13:52:52'),(33,13,0,12,'test','test','2017-01-28 13:59:52'),(34,7,1,14,'Test group 2','tralalalalala','2017-01-28 14:00:12'),(35,13,0,12,'Test1','Test1','2017-01-28 14:00:16'),(36,7,1,14,'Test group 2','tralalalalala','2017-01-28 14:00:54'),(37,13,0,12,'Post2','Post','2017-01-28 14:02:55'),(38,7,1,14,'Test group 2','tralalalalala','2017-01-28 14:03:20'),(39,7,1,14,'Test group 2','tralalalalala','2017-01-28 14:04:45'),(40,13,0,12,'Help','Dit werkt nog steeds niet :(..','2017-01-28 14:05:23'),(41,7,1,14,'Test group 2','tralalalalala','2017-01-28 14:05:58'),(42,7,1,14,'Test group 2','tralalalalala','2017-01-28 14:06:10'),(43,13,0,12,'Help','Dit werkt nog steeds niet :(..','2017-01-28 14:07:21'),(44,13,0,12,'Help','Dit werkt nog steeds niet...','2017-01-28 14:09:06'),(45,7,1,14,'da','da','2017-01-28 14:10:17'),(46,7,1,14,'Test group 2','datestestse','2017-01-28 14:10:59'),(47,7,1,14,'Test group 2','datestestse','2017-01-28 14:11:16'),(48,6,0,20,'This is about sidney.','Sidney.','2017-01-28 14:14:24'),(49,13,0,12,'aa','aa','2017-01-28 14:16:11'),(50,13,0,12,'Test01','aa','2017-01-28 14:18:05'),(51,13,0,12,'Test01','aa','2017-01-28 14:20:23'),(52,13,0,10,'Post','Post','2017-01-28 14:21:55'),(53,7,1,14,'tada','tada','2017-01-28 14:46:11'),(54,7,1,14,'tada','tada','2017-01-28 14:47:08'),(55,7,0,11,'tada','tada','2017-01-28 14:49:10'),(56,7,1,14,'Rotterdam','This is a post at the page of Rotterdam','2017-01-28 14:53:49'),(57,7,1,13,'Tralalalol','Tralalalalol','2017-01-28 15:58:01'),(58,7,1,13,'Tralalalol','Tralalalalol','2017-01-28 15:59:26'),(59,7,1,15,'gaga','gaga','2017-01-28 15:59:47'),(60,1,1,10,'haha','test','2017-01-28 21:26:59'),(61,1,0,9,'Science park','Cool','2017-01-29 11:14:21'),(62,1,0,11,'Test123','Test123','2017-01-29 12:08:17'),(63,1,0,9,'AJAX','AJAX WERK EENS','2017-01-29 12:41:56'),(64,1,0,9,'test','test','2017-01-29 12:53:43'),(65,1,0,9,'Heya','ajax','2017-01-29 12:58:05'),(66,0,0,9,'Hahaha','ajxa is cool','2017-01-29 13:01:05'),(67,0,0,9,'test','test','2017-01-29 15:34:09'),(68,0,0,19,'HAloo','Hallo','2017-01-29 15:41:04'),(69,0,0,9,'wtf','ok','2017-01-29 15:46:30'),(70,0,0,9,'lalala','lol','2017-01-29 15:46:35'),(71,0,0,11,'About rotterdam','About rotterdam','2017-01-29 15:55:04'),(72,6,1,23,'I want','I want to travel with you','2017-01-29 15:55:43'),(73,0,0,10,'Ooh a post','How cool is that','2017-01-29 17:10:34'),(74,0,0,22,'Ooh a post','cool','2017-01-29 17:11:00'),(75,0,0,22,'post','post','2017-01-29 17:13:03'),(76,0,1,10,'Post','new','2017-01-29 17:36:01'),(77,0,1,13,'tralalalalalol','tralalalalol','2017-01-29 18:09:33'),(78,0,1,10,'Test','test','2017-01-29 18:13:02'),(79,0,1,10,'deze volgorde','klopt nog niet','2017-01-29 18:15:36'),(80,0,1,10,'User id test','pls werk','2017-01-29 18:19:31'),(81,1,1,10,'Coole post','Test','2017-01-29 18:25:30'),(82,28,0,9,'Meeting','G4.26','2017-01-30 12:30:33'),(83,6,0,12,'ROME!','Rome is awesome.','2017-01-31 08:33:07'),(84,1,1,10,'This website','This website is amazing! It has so many options! Look at how cool this post is. It even shows up at my profile as well as the group page!','2017-01-31 11:41:49'),(85,1,1,29,'Cool group right?','Not just cool, but the best!','2017-01-31 20:23:29'),(86,6,1,18,'HOI','hahahha','2017-02-01 11:26:55'),(87,6,1,18,'Hi','Hi','2017-02-01 11:27:17'),(88,1,1,14,'Test','Een post','2017-02-01 11:27:35'),(89,6,1,18,'h','HAHAAHAAHAH','2017-02-01 11:28:29'),(90,1,1,14,'Test','test','2017-02-01 11:34:06'),(91,1,1,14,'test2','Werkt het','2017-02-01 11:34:28'),(92,1,1,14,'test3','en nu?','2017-02-01 11:35:31'),(93,1,1,14,'test4','test','2017-02-01 11:37:08'),(94,1,1,14,'test5','test','2017-02-01 11:39:35'),(95,1,1,14,'test6','test','2017-02-01 11:39:47'),(96,1,1,14,'New post','Cool','2017-02-01 11:41:21'),(97,1,1,14,'Niewste post','test','2017-02-01 11:44:01'),(98,6,0,29,'foto\'s van test locatie','kan ik hier ook foto\'s plaatsen?','2017-02-01 19:37:29'),(99,6,0,28,'post','hier wel?','2017-02-01 19:41:48'),(100,7,1,30,'Welkom by','Falafel. This food taste amazing, I quess...','2017-02-01 20:01:36'),(101,1,0,9,'test','werkt dit niet meer?','2017-02-01 20:03:38'),(102,6,0,9,'Post','Test post','2017-02-01 20:11:13'),(103,7,0,34,'Post','Post','2017-02-01 20:15:05'),(104,7,1,18,'Paris Tour','Paris Tour','2017-02-01 20:17:53'),(105,7,0,9,'Science Park','Science park','2017-02-01 20:18:22'),(106,1,0,11,'Test','Oh a post','2017-02-01 20:45:36'),(107,6,0,36,'post','werkt het smooth?','2017-02-02 07:54:23'),(108,6,0,36,'werr','wwww','2017-02-02 07:54:36'),(109,21,0,26,'sdFASDF','ASDFSADF','2017-02-02 12:11:34'),(110,21,0,26,'sdafasdf','asdfasdf','2017-02-02 12:11:43'),(111,21,0,26,'sadfasdfasdfadsddddddd','ddddd','2017-02-02 12:11:56'),(112,1,1,32,'Coole groep','Echt heel cool','2017-02-02 20:21:53'),(113,7,1,14,'Post op groep','Hoi ik post hier','2017-02-02 21:31:42'),(114,21,1,19,'Morgen skieen?','ZUllen we morgen gaan skieen?','2017-02-02 21:38:38'),(115,21,1,19,'Skieen','Zullen we morgen skieen','2017-02-02 21:38:49'),(116,1,1,22,'Cool','Test','2017-02-02 21:49:59'),(117,1,1,22,'Cool test','test','2017-02-02 21:50:07'),(118,1,0,27,'Cool hoor','Toch?','2017-02-02 22:28:44'),(119,1,1,13,'Super cool','toch?','2017-02-02 22:28:58'),(120,1,1,10,'Amazing group','This team! So nice','2017-02-02 22:31:48'),(121,1,0,9,'Heya','Cool location','2017-02-02 22:32:02'),(122,1,0,27,'Heya','Cool location!','2017-02-02 22:32:14'),(123,1,0,27,'Probably the best','In the whole country!','2017-02-02 22:32:55'),(124,7,0,27,'Post','Post','2017-02-03 08:47:12'),(125,7,1,30,'Falafel','Hoi','2017-02-03 08:47:28'),(126,6,0,9,'een post','een post','2017-02-03 08:50:46'),(127,6,0,38,'lege locatie','test','2017-02-03 08:51:06'),(128,6,0,38,'hi','hi','2017-02-03 08:51:34'),(129,6,0,39,'hi','hi','2017-02-03 08:51:50'),(130,1,0,40,'Cool','Mooi hoor','2017-02-03 08:54:17'),(131,1,0,40,'Cool','Test','2017-02-03 08:54:31'),(132,21,0,27,'Amsterdam','Amsterdam','2017-02-03 09:07:36'),(133,39,0,44,'Cool','Bestaat alleen niet denk ik','2017-02-03 09:13:52'),(134,42,0,45,'Lets build a rocket so we can go to the moon','It\'s not rocket science','2017-02-03 09:29:09'),(135,7,0,47,'Dodo','Dodo','2017-02-03 09:32:55'),(136,21,1,19,'message','Deze group is lit.','2017-02-03 09:49:11'),(137,43,0,25,'Iguazu falls are really nice','Wow man, I have bin to Iguazu falls and it is really nice. Who would like to join me next week? Maybe Falk? @Falk','2017-02-03 09:52:31'),(138,44,0,49,'Alleppo','Ik heb een leuke tijd gehad in aleppo, maar waar kan ik mn fotos plaatsen??','2017-02-03 09:57:55'),(139,45,0,9,'wat een kutpark','waarom ben ik hier','2017-02-03 09:59:33'),(140,46,0,40,'LALA','lalala','2017-02-03 10:13:07'),(141,39,0,50,'jan','Afghanistan','2017-02-03 10:21:25'),(142,7,0,9,'Hoi','Hoi','2017-02-03 10:25:12'),(143,47,0,46,'Busje reis naar Allepo','Ik ga een jihad voeren in Allepo, kom mee!!','2017-02-03 10:46:57'),(144,21,0,46,'Ey','Allepo is lit','2017-02-03 10:50:14'),(145,21,1,10,'a','a','2017-02-03 11:09:38'),(146,21,0,27,'Cool city!','I had a great time in Amsterdam, i\'d love to go their again.\nThe people were great and very friendly. And everyone spoke perfect English, amazing!','2017-02-03 11:52:16'),(147,21,0,14,'Great nightlife','The clubs in Berlin are fantastic! \nYou should definitely try Berghain and the Tresor. They have the best techo. The cosmonaut has a great patio to have a smoke and chat with locals. I totally recommend this place.','2017-02-03 11:54:52'),(148,21,1,18,'Tour de eifel','Hey guys, lets go visit the Eifeltower with this group! Last event was so fun and i miss you guys','2017-02-03 11:57:33');
+/*!40000 ALTER TABLE `posts` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `profiles`
+--
+
+DROP TABLE IF EXISTS `profiles`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `profiles` (
+  `user_id` int(16) unsigned NOT NULL,
+  `description` varchar(2048) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'This user has no description yet',
+  `avatar` varchar(1024) COLLATE utf8_unicode_ci NOT NULL DEFAULT '/images/avatars/defaultavatar.jpg',
+  `status` tinyint(3) unsigned NOT NULL,
+  PRIMARY KEY (`user_id`),
+  UNIQUE KEY `user_id` (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `profiles`
+--
+
+LOCK TABLES `profiles` WRITE;
+/*!40000 ALTER TABLE `profiles` DISABLE KEYS */;
+INSERT INTO `profiles` VALUES (1,'Ik ben de boze admin van Backpack Buddies. Soms ben ik niet boos.','/images/avatars/AAEAAQAAAAAAAAPBAAAAJGYyN2UzODgxLTYzMzAtNGUyOS05YTI1LTcwNGFlMDA5NTAzNg.jpg',0),(5,'eeee','/images/avatars/bpbicon.jpg',0),(6,'Hello! My name is Martine. I LOVE to travel. Would you like to be my friend?','/images/avatars/N79Kbeuw.png',0),(7,'Hii!','/images/avatars/potd-squirrel_3519920k.jpg',0),(13,'This user has no description yet, or does he?','/images/avatars/source.gif',0),(20,'wtfttttttttttt','/images/avatars/AAEAAQAAAAAAAAPBAAAAJGYyN2UzODgxLTYzMzAtNGUyOS05YTI1LTcwNGFlMDA5NTAzNg.jpg',0),(21,'Hey, i\'m Falk.\r\nI love traveling to warm destinations with beaches and palm trees.\r\nI\'m also hugely into extreme sports like surfing, mountain-biking and rafting.','/images/avatars/testimage1.jpg',1),(24,'This user has not made a description yet.','/images/avatars/defaultavatar.jpg',0),(25,'This user has not made a description yet.','/images/avatars/defaultavatar.jpg',0),(28,'TA','/images/avatars/defaultavatar.jpg',0),(29,'This user has not made a description yet.','/images/avatars/defaultavatar.jpg',0),(30,'This user has not made a description yet.','/images/avatars/defaultavatar.jpg',0),(31,'This is my description. This is my description.This is my description.This is my description.This is my description.This is my description.This is my description.This is my description.This is my description.This is my description.','/images/avatars/2017-01-28 (2).png',0),(35,'This user has not made a description yet.','/images/avatars/defaultavatar.jpg',0),(36,'This user has not made a description yet.','/images/avatars/defaultavatar.jpg',1),(37,'This user has not made a description yet.','/images/avatars/defaultavatar.jpg',0),(38,'This user has not made a description yet.','/images/avatars/defaultavatar.jpg',0),(39,'This user has not made a description yet.','/images/avatars/defaultavatar.jpg',0),(40,'This user has not made a description yet.','/images/avatars/defaultavatar.jpg',0),(41,'This user has not made a description yet.','/images/avatars/defaultavatar.jpg',0),(42,'I want to go to the moon, who\'s with me?','/images/avatars/travel.jpg',0),(43,'Haaalo ik ben arie','/images/avatars/quit.ico',0),(44,'This user has not made a description yet.','/images/avatars/defaultavatar.jpg',0),(45,'Niet geerten rijsdijk, maar geerten van rijsdijk','/images/avatars/AAEAAQAAAAAAAAPBAAAAJGYyN2UzODgxLTYzMzAtNGUyOS05YTI1LTcwNGFlMDA5NTAzNg.jpg',1),(46,'SHANNNNNNIIII','/images/avatars/travel.jpg',0),(47,'Ik reis in een busje','/images/avatars/paint.png',0),(48,'This user has not made a description yet.','/images/avatars/defaultavatar.jpg',0),(49,'This user has not made a description yet.','/images/avatars/defaultavatar.jpg',0);
+/*!40000 ALTER TABLE `profiles` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users` (
+  `user_id` int(16) unsigned NOT NULL AUTO_INCREMENT,
+  `firstname` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
+  `infix` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
+  `lastname` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
+  `gender` varchar(16) COLLATE utf8_unicode_ci NOT NULL,
+  `date_of_birth` date NOT NULL,
+  `country` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
+  `city` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
+  `username` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
+  `salt` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
+  `status` tinyint(4) NOT NULL,
+  `datetime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `admin_status` tinyint(4) NOT NULL,
+  PRIMARY KEY (`user_id`),
+  UNIQUE KEY `username` (`username`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'Wouter','','Zwerink','Male','1998-06-25','Netherlands','Bussum','zwerinkw@gmail.com','wouter','$2y$10$Ka0s6n/SUXYOuXFpq8fVFeW8idK1QIQD0pRIog4abwJuHM5M68CL2','',0,'2017-01-24 11:18:23',1),(6,'Martine','','Toering','Female','1998-05-22','Netherlands','Rotterdam','martine.toering@student.uva.nl','martine','$2y$10$Se9p0jt8NkpIBIwYFtqhlu4ASZrRarZiFsnKqCWYDUSn7jmgZb/hi','',0,'0000-00-00 00:00:00',1),(7,'Ninande','','Vermeer','Female','1998-07-15','Netherlands','Haarlem','ninande@ninande.nl','Ninande','$2y$10$6qKgNAIMxur2wp9Q58Bov.KHMYem1m1yEamklCZ.iKuEmtSXxy1Dy','',0,'0000-00-00 00:00:00',1),(11,'Albert','De','Anonieme Superpraeses','Male','1980-10-02','Bangladesh','Het geheime Noorden','anoniemesuperpraeses@nereus.com','anoniemesuperpraeses@nereus.com','$2y$10$iLJpulZYdJi63TfhppVFT.cXSbYJXVslzaFRcktDIDQfFoW4qz/rO','',0,'2017-01-24 12:46:28',0),(13,'Sander','','Steur','Male','1997-10-01','Netherlands','Volendam','sandersteur@live.nl','Sander','$2y$10$LzGQw6tvg6Fd4WBG2A7wqOVP5eIWJyQN8ITfZi20Uh4O4KGiVHG7K','',0,'2017-01-24 13:12:41',1),(15,'kaas','kaas','kaas','Male','0997-11-11','Austria','Amsterdam','kaas@kaas.nl','kaas','$2y$10$tvBNtj0e3K3Fk.ZN0sdrJelOjnV2hbsA6ZM6Ky3JAvts8Rfjstdx2','',1,'2017-01-24 17:09:55',0),(16,'a','a','a','Female','2000-01-01','Afganistan','a','a@a.a','asdf','$2y$10$qnT0P5yDL2DDH13AS0ljZueCSml8KnLINR4xemsH8lYPvHOj7LLe6','',0,'2017-01-25 01:04:08',0),(21,'Falk','','Sinke','Male','1996-10-17','Netherlands','Amsterdam','falksinke@gmail.com','Falk','$2y$10$8b07N7W1orJlrwP46OPaF.hn5rAPclpZuMlhBEK1ALiqGSQufh7v6','$2y$10$LtFIfi0SqQ6wXQOT9VUGwuLXQ3Qd7/SgB.GxofcQuliPhU7ReA.VK',0,'2017-01-26 12:46:06',1),(25,'awaa','','aeweaawe','Male','1996-12-12','Bahrain','testawqr','aweawea@aweaweaw.awwa','waaaa','$2y$10$2fZdA/PjbbZ4ZYdah3NO6ejL.H4ETO2a2TD1ptup/hrcytOZ6JdAy','2017-01-27 12:57:30',0,'2017-01-27 11:57:30',0),(28,'Pieter','','Kronemeijer','Male','1997-04-17','Netherlands','Amsterdam','pieter.kronemeijer@student.uva.nl','Pieter','$2y$10$zeCgrRX8zsczinIgJelyZO6YQUfLdd2Gy2ocV9mFF5aB7SJwoFYcW','$2y$10$igswEj/UPnihYUHvYuAlr.veBxqyt6mAApspI5S9wa0QY8i06fQK2',0,'2017-01-27 15:07:05',1),(29,'Bob','','Hackt\'u','Male','1997-01-27','Afganistan','China','Flashgurdo1n@garbage.com','404','$2y$10$TPb/O4gKEGyXGxwTeJVane5WSDJDVk3R7OlsbC8M0oZwLEuDY5cuC','$2y$10$jPXmzrlGTMYfg9R2VP3hN.NweH5btrD7Uik5KJqp2JLj/OV7PsiOu',0,'2017-01-27 15:53:10',0),(30,'Hans','','de Boer','Male','1996-01-10','Netherlands','Sneek','hans.deboer@gmail.com','hans','$2y$10$7HqDf3TobKPPzq/EHz8Mtu7yWRRCCsQZLKaJ5HwQifCh3X45lJfFO','$2y$10$R89G6.UIyrtlYMtVbxPxz.4rU1.zZW1W0h7fAz8YMoK.kCJCuDakG',0,'2017-01-28 12:19:08',0),(31,'Test','','fjeioj','Female','1995-02-02','Barbados','A','a@a.nl','newmartine','$2y$10$Pnm7BFghG4z/v7WN8LOA6ufdiPvaVbix.TCD7yU8ulPt/ozpOCbta','$2y$10$lj3uECZpqOVTly2Nge3D2.hf142qlBxioC/4NTpYzO18z1nctlB32',0,'2017-01-28 14:01:43',0),(35,'Julian','','Lo Dico','Male','1997-06-19','Kazakhstan','Amsterdam','julian159@live.nl','julian123','$2y$10$7ed8qsGYre6aU76ZYeptA.aI8P0DsKy1/yg7MRyxY0QX5lu/KBOYu','$2y$10$/fSY0VU5PCyZOhuxQ9PlGuLyGl248ngxjPr6f5dV2sBDpozR2Xfcq',0,'2017-01-30 13:09:29',0),(36,'Jingle','van','Bells','Female','0001-12-25','Norway','Northpole','jingle@northpole.com','JingleBells','$2y$10$/wN7qbCVh5VCJSGyWM0EYufOiqAijAR7TvuWNR/Nk40mY32X.XaB2','$2y$10$YMsyw86ZpIg6./.Iht113etf8.H.fwJmlCCwe5OgkEe./5ZnCdvNG',0,'2017-01-30 16:13:18',0),(38,'Dries','','Fransen','Male','1998-03-03','Netherlands','De Kwakel!!!','rikmixer@gmail.com','Dries','$2y$10$0/9tGGMr2s8a1AaB1xugL.CGostf3nEZUefq1yZhWoFf15Ggdyply','$2y$10$IZ4HjaS.RNi.VJk5PahGXeBHPyBpSWw1NAGU1z2xoTKff9YcdyGU.',0,'2017-02-01 13:42:17',0),(39,'Jan','De','Tester','Male','1988-05-12','Canada','Toronto','jan@tester.de','jantest','$2y$10$MSOnc8Jj.TUoiQ7FyE5Wku3yEYqSFKmba1xyeCmlvVdhFRgRE9a7m','$2y$10$NfGm3rVkSLsF/LRzp3tK8eu/QEZ.Z1xc2qHtljvVNLEM5Z815t7Ji',0,'2017-02-02 18:30:06',0),(40,'Ham','Brie','Bacon','Male','0000-00-00','Albania','dasf','asdf@adsfasdf.nl','BaconEter','$2y$10$PmFvzDvcd0ut3kv3QSoP9eP/0fCva9ebM1eyuXfCDiGOabqW4BVMK','$2y$10$FeRt2WLcrBoYt3L2f4Pg2.FHXBOMSrA./mX1h0WUCJG7vkibVFAEy',0,'2017-02-02 21:21:32',0),(41,'Alex','','Ketelaars','Male','1900-03-24','Barbados','Soest','alexketelaars@gmail.com','nietalex','$2y$10$rEbGxV/QblnB4XWnin3NHuvd4zuc24Nk0N2TYPkvMD/WbkrmTrOz6','$2y$10$4dTznK/J6wjnlKNAaLuNA.GRPK3Rh1n1Pa1CqMZNNhOpXD3X/qKBW',0,'2017-02-03 09:21:18',0),(42,'Nienke','','Duetz','Female','1996-12-20','Netherlands','Leiden','nienke@iets.nl','nienkecarlijn','$2y$10$UlaqqT5QMUDUuyYJKgaIYu2psqL4tiVcTPERhnRGC6srYReu9i1HS','$2y$10$2o7Q4H5mGzN7CmLs/TND0Ora4Vq0p2AaGmnpcroCdWlnrbMTJxxRC',0,'2017-02-03 09:26:07',0),(43,'Arie','van','arie','Female','1880-04-04','French Southern Ter','Amsterdam','arie@arie.nl','ariano','$2y$10$p64PkTRmiqxszXSRN837c.tasohN145TB6F.K/OpEdji4c/MAnUIG','$2y$10$UaNm6sHEP.DDfVTwM9pKaOmlDfwpXMICU7ANHwWBfWTGxnhD.OdKu',0,'2017-02-03 09:44:54',0),(44,'Bert','','Bredeweg','Male','1956-03-03','Netherlands','amsterdam','s@k.nl','skohne','$2y$10$773xJ66CMKBbbniVcME/leMOBUO9L2bqEO/W2hWi3XfqoOw9NsxRi','$2y$10$1AtpRlOXN2llexYXewvGLujWFd/RvlVmTlhUa4f7jt72PuPkaAx2G',0,'2017-02-03 09:55:15',0),(45,'Geerten','van','Rijsdijk','Male','1998-05-06','Netherlands','Huizen','Geertenrijsdijk@hotmail.com','GeertenvanRijsdijk','$2y$10$Y5VPt/JIrzkmCMb3Uol95.adY7A8mt4n.2Ja8V1OQEFXRfD6jay5a','$2y$10$9Mp95zNKgxkbx7bXcWgouOCcIB1wXbtwGgyX7esT0JNcf9/W2cbse',0,'2017-02-03 09:56:18',0),(46,'Lizz','','Boom','Female','1996-03-16','Netherlands','Amsterdam','semg98@gmail.com','Lizz','$2y$10$6gPQY6jiZ5skM0yLQthlHOa3kxiecdKnttRXlZ3zzwxv4aPZXUVze','$2y$10$PBzxuzB0frQYGD78jsb2LOe/G4q85G5KXQr1AinS0xPicUPYqMKCu',0,'2017-02-03 10:11:23',0),(47,'Stefan','','Klut','Male','1997-01-02','Netherlands','Bakkum','stefanklut12@gmail.com','StefanInAmerika','$2y$10$0OIIxu0XPuK3d/Ig7ikGJ.AxPKAMUONhJSOHcohIeWmjcHVZ3nKf2','$2y$10$ajiCrEG7PPbEVv43dB7JIe68ymrMsW/4jpnWylK3nBnptNX3ZPnEm',0,'2017-02-03 10:39:55',0),(48,'Test','','Test','Female','1997-09-22','Belgium','Haarlem','test@test.nl','testtest','$2y$10$b4PhFEuf7YcVbIoX7kemyeMlj5XZmsqkWuzV5aumB/6YH3LFUJX4C','$2y$10$8GBN1qCd9uQh8N6k4ZiaB.bI.VlUY4fVDoAjxmG43SFPfl55FrNlG',1,'2017-02-03 10:46:01',0),(49,'yoyo','','yoyo','Female','1997-03-06','Zimbabwe','Bussum de gekste','hoi@hoi.nl','lmao','$2y$10$qHhoTSxj2h/U1TGhFdOe6O0sC7olnfe/FfpiEB5y0cx/7sGYhPgt6','$2y$10$gQd5eKfvQs6Z3ZCGraEVYun7GCzg4IUgHesfJ/.PdyxXdKIlCCE9q',0,'2017-02-03 11:13:18',0);
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2017-02-03 22:21:31
